@@ -1,0 +1,17 @@
+server:
+  http_listen_port: 3200
+
+distributor:
+  receivers:
+    zipkin:
+
+#ingester:
+#  trace:
+#    max_block_duration: 1s  # Reduce batching wait time
+#    max_block_bytes: 500KB  # Reduce the size of the batch
+
+storage:
+  trace:
+    backend: local
+    local:
+      path: /tmp/tempo/blocks
